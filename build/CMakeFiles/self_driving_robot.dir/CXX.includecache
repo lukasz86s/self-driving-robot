@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/odroid/workspace/c_cpp/sefl_driving_robot/main.cpp
+cstdio
+-
+cstdlib
+-
+iostream
+-
+fstream
+-
+

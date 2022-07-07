@@ -1,0 +1,1 @@
+/bin/aarch64-linux-gnu-g++  -g  -rdynamic CMakeFiles/self_driving_robot.dir/main.cpp.o  -o self_driving_robot 

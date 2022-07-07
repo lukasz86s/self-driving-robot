@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/odroid/workspace/c_cpp/sefl_driving_robot/build",
+  "command": "/bin/aarch64-linux-gnu-g++    -g   -o CMakeFiles/self_driving_robot.dir/main.cpp.o -c /home/odroid/workspace/c_cpp/sefl_driving_robot/main.cpp",
+  "file": "/home/odroid/workspace/c_cpp/sefl_driving_robot/main.cpp"
+}
+]
