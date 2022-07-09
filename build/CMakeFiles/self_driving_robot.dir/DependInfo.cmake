@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/odroid/workspace/c_cpp/sefl_driving_robot/main.cpp" "/home/odroid/workspace/c_cpp/sefl_driving_robot/build/CMakeFiles/self_driving_robot.dir/main.cpp.o"
+  "/home/odroid/workspace/c_cpp/sefl_driving_robot/motor_control/odroid_pins.cpp" "/home/odroid/workspace/c_cpp/sefl_driving_robot/build/CMakeFiles/self_driving_robot.dir/motor_control/odroid_pins.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

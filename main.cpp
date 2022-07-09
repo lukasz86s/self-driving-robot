@@ -2,9 +2,8 @@
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
+#include "motor_control/odroid_pins.hpp"
 
-#define PERIOD_INIT_VAL 1000000
-#define DUTY_CYCLE_INIT_VAL 300000
 using namespace std;
 
 void write_to_file(const char* path, int value){
@@ -12,7 +11,9 @@ void write_to_file(const char* path, int value){
     my_file << value << endl;
 }
 
-int main(int arg, char* kwarg[]){
+int main(int argv, char* args[]){
+    PwmPins* pwm = new PwmPins(); 
+    pwm->initPin();
     cout << "test programu, periond " << endl;
     write_to_file("/sys/class/pwm/pwmchip0/pwm0/period", PERIOD_INIT_VAL);
     write_to_file("/sys/class/pwm/pwmchip0/pwm0/duty_cycle", DUTY_CYCLE_INIT_VAL);

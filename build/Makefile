@@ -547,6 +547,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/self_driving_robot.dir/build.make CMakeFiles/self_driving_robot.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+motor_control/odroid_pins.o: motor_control/odroid_pins.cpp.o
+
+.PHONY : motor_control/odroid_pins.o
+
+# target to build an object file
+motor_control/odroid_pins.cpp.o:
+	$(MAKE) -f CMakeFiles/self_driving_robot.dir/build.make CMakeFiles/self_driving_robot.dir/motor_control/odroid_pins.cpp.o
+.PHONY : motor_control/odroid_pins.cpp.o
+
+motor_control/odroid_pins.i: motor_control/odroid_pins.cpp.i
+
+.PHONY : motor_control/odroid_pins.i
+
+# target to preprocess a source file
+motor_control/odroid_pins.cpp.i:
+	$(MAKE) -f CMakeFiles/self_driving_robot.dir/build.make CMakeFiles/self_driving_robot.dir/motor_control/odroid_pins.cpp.i
+.PHONY : motor_control/odroid_pins.cpp.i
+
+motor_control/odroid_pins.s: motor_control/odroid_pins.cpp.s
+
+.PHONY : motor_control/odroid_pins.s
+
+# target to generate assembly for a file
+motor_control/odroid_pins.cpp.s:
+	$(MAKE) -f CMakeFiles/self_driving_robot.dir/build.make CMakeFiles/self_driving_robot.dir/motor_control/odroid_pins.cpp.s
+.PHONY : motor_control/odroid_pins.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -590,6 +617,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... motor_control/odroid_pins.o"
+	@echo "... motor_control/odroid_pins.i"
+	@echo "... motor_control/odroid_pins.s"
 .PHONY : help
 
 

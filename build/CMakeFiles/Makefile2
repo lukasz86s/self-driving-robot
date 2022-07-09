@@ -804,12 +804,12 @@ CMakeFiles/ContinuousMemCheck.dir/clean:
 CMakeFiles/self_driving_robot.dir/all:
 	$(MAKE) -f CMakeFiles/self_driving_robot.dir/build.make CMakeFiles/self_driving_robot.dir/depend
 	$(MAKE) -f CMakeFiles/self_driving_robot.dir/build.make CMakeFiles/self_driving_robot.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/odroid/workspace/c_cpp/sefl_driving_robot/build/CMakeFiles --progress-num=1,2 "Built target self_driving_robot"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/odroid/workspace/c_cpp/sefl_driving_robot/build/CMakeFiles --progress-num=1,2,3 "Built target self_driving_robot"
 .PHONY : CMakeFiles/self_driving_robot.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/self_driving_robot.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/workspace/c_cpp/sefl_driving_robot/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/workspace/c_cpp/sefl_driving_robot/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/self_driving_robot.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/odroid/workspace/c_cpp/sefl_driving_robot/build/CMakeFiles 0
 .PHONY : CMakeFiles/self_driving_robot.dir/rule

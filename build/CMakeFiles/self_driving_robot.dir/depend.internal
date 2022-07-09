@@ -3,3 +3,7 @@
 
 CMakeFiles/self_driving_robot.dir/main.cpp.o
  /home/odroid/workspace/c_cpp/sefl_driving_robot/main.cpp
+ /home/odroid/workspace/c_cpp/sefl_driving_robot/motor_control/odroid_pins.hpp
+CMakeFiles/self_driving_robot.dir/motor_control/odroid_pins.cpp.o
+ /home/odroid/workspace/c_cpp/sefl_driving_robot/motor_control/odroid_pins.cpp
+ /home/odroid/workspace/c_cpp/sefl_driving_robot/motor_control/odroid_pins.hpp

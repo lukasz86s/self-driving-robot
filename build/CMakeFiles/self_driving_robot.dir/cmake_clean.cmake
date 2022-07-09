@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/self_driving_robot.dir/main.cpp.o"
+  "CMakeFiles/self_driving_robot.dir/motor_control/odroid_pins.cpp.o"
   "self_driving_robot"
   "self_driving_robot.pdb"
 )

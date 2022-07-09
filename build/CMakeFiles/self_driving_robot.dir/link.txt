@@ -1,1 +1,1 @@
-/bin/aarch64-linux-gnu-g++  -g  -rdynamic CMakeFiles/self_driving_robot.dir/main.cpp.o  -o self_driving_robot 
+/bin/aarch64-linux-gnu-g++  -g  -rdynamic CMakeFiles/self_driving_robot.dir/main.cpp.o CMakeFiles/self_driving_robot.dir/motor_control/odroid_pins.cpp.o  -o self_driving_robot 
