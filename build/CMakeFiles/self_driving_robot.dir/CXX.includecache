@@ -18,5 +18,15 @@ fstream
 motor_control/odroid_pins.hpp
 /home/odroid/workspace/c_cpp/sefl_driving_robot/motor_control/odroid_pins.hpp
 
+/home/odroid/workspace/c_cpp/sefl_driving_robot/motor_control/odroid_pins.cpp
+odroid_pins.hpp
+/home/odroid/workspace/c_cpp/sefl_driving_robot/motor_control/odroid_pins.hpp
+fstream
+-
+iostream
+-
+cstring
+-
+
 /home/odroid/workspace/c_cpp/sefl_driving_robot/motor_control/odroid_pins.hpp
 

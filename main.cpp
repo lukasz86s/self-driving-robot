@@ -12,11 +12,11 @@ void write_to_file(const char* path, int value){
 }
 
 int main(int argv, char* args[]){
-    PwmPins* pwm = new PwmPins(); 
-    pwm->initPin();
+    PwmPins* pwm0 = new PwmPins(); 
+    PwmPins* pwm1 = new PwmPins("pwmchip1");
+    pwm0->initPin();
+    pwm1->initPin();
     cout << "test programu, periond " << endl;
-    write_to_file("/sys/class/pwm/pwmchip0/pwm0/period", PERIOD_INIT_VAL);
-    write_to_file("/sys/class/pwm/pwmchip0/pwm0/duty_cycle", DUTY_CYCLE_INIT_VAL);
-     write_to_file("/sys/class/pwm/pwmchip0/pwm0/enable", 1);
+
     return 0;
 }
