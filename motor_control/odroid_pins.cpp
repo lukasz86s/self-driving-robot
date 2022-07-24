@@ -1,9 +1,11 @@
 #include "odroid_pins.hpp"
 #include <fstream>
 #include <iostream>
-#include <cstring>
+#include <string>
+// wariadic func : #include <cstdarg>
 
 using namespace std;
+//TODO: add zed debug macroc
 
 //TODO: capture error from ofstream 
 void Pins::writePinFile(const char* path, unsigned int value){
@@ -27,8 +29,7 @@ void Pins::writePinFile(const char* path, const char* str_cmd){
 }
 
 void PwmPins::initPin(){
-    char path[PATH_TO_PWM_TAB_LEN+10];
-    cout << "implementacj init" << endl;
+    char path[PATH_TAB_LEN+10];
     //copy path to enable
     sprintf(path,"%s%s", path_to_pwmchip, "export");
     //enable pin 
@@ -51,3 +52,20 @@ PwmPins::PwmPins(const char* pwmchip ){
     cout<< path_to_pwmchip << endl;
 
 }
+
+void GpioPins::initPin(){
+    char path[PATH_TAB_LEN];
+    sprintf(path, "%s%s", PATH_TO_GPIO, "export");
+
+}
+//TODO: create variadic variable to initialize seweral gpios
+// GpioPins::GpioPins(const T&... pins){
+//     // char **gpio_tab = new(char* , len(variadic))
+//     // for (char &tab : gpio_tab){ tab = variadic[0], tab = variadic[1]...
+//     int vars = *(&gpioStr + 1) - gpioStr;
+//     cout<< "vars :" <<vars<<endl;
+//     for(int i = 0; i < vars; i++){
+
+
+//     }
+// }

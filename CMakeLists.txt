@@ -5,6 +5,7 @@ include(CTest)
 enable_testing()
 
 add_executable(self_driving_robot main.cpp motor_control/odroid_pins.cpp )
+set_property(TARGET self_driving_robot PROPERTY CXX_STANDARD 20)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

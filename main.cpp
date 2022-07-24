@@ -17,6 +17,8 @@ int main(int argv, char* args[]){
     pwm0->initPin();
     pwm1->initPin();
     cout << "test programu, periond " << endl;
+    
+    GpioPins* a   = new GpioPins("raz", "dwa", "trzy");
 
     return 0;
 }

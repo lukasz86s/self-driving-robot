@@ -1,19 +1,22 @@
 #ifndef ODROID_PINS_H
 #define ODROID_PINS_H
 
+#include <map>
+#include <iostream>
+#include <array>
+
 #define PERIOD_INIT_VAL 1000000U
 #define DUTY_CYCLE_INIT_VAL 300000U
 
-#define PATH_TO_PWM_TAB_LEN 50
-#define PATH_TO_GPIO_TAB_LEN 50
+#define PATH_TAB_LEN 50
 
 #define PATH_TO_PWM "/sys/class/pwm/"
-#define PATH_TO_GPIO "/sys/class/gpio"
+#define PATH_TO_GPIO "/sys/class/gpio/"
 
 #define SETTINGS_PWM_TAB_LEN 3
 #define SETTINGS_GPIO_TAB_LEN 2
 
-
+using namespace std;
 
 
 class Pins{
@@ -26,7 +29,7 @@ class Pins{
 class PwmPins: 
             public Pins{
                 private:
-                    char path_to_pwmchip[PATH_TO_PWM_TAB_LEN];
+                    char path_to_pwmchip[PATH_TAB_LEN];
                     const char* initial_settings[SETTINGS_PWM_TAB_LEN] = {"period", "duty_cycle", "enable"};
                     unsigned int initial_settings_values[SETTINGS_PWM_TAB_LEN] = {PERIOD_INIT_VAL, DUTY_CYCLE_INIT_VAL, 1};
                     enum{SETTINGS_PERIOD, SETTINGS_DUTY_CYCLE, SETTINGS_ENABLE};
@@ -42,13 +45,38 @@ class PwmPins:
 class GpioPins:
             public Pins{
                 private:
-                    char path_to_gpio[PATH_TO_GPIO_TAB_LEN];
-                    const char* inita_settings[SETTINGS_GPIO_TAB_LEN] = {"direction", "value"};
+                    // Mapping odroid M1 GPIOyx.z to connected number
+                    // TODO: mayb change to enum
+                    map<string, int> gpio_to_int = {{"gpio0B3", 11 }, {"gpio0B4", 12 }, {"gpio0B5", 13 }, {"gpio0B6", 14 },
+                                                    {"gpio3B2", 106}, {"gpio3B5", 109}, {"gpio3B6", 110}, {"gpio4B6", 142},
+                                                    {"gpio0C0", 16 }, {"gpio0C1", 17 }, {"gpio3C6", 118}, {"gpio3C7", 119},
+                                                    {"gpio4C1", 145},
+                                                    {"gpio2D0", 88 }, {"gpio2D1", 89 }, {"gpio2D2", 90 }, {"gpio2D3", 91 },
+                                                    {"gpio3D0", 120}, {"gpio3D1", 121}, {"gpio3D2", 122}, {"gpio3D3", 123},
+                                                    {"gpio3D1", 124}, {"gpio3D5", 125}, {"gpio3D6", 126}, {"gpio3D7", 127} 
+                                                     };
+                    map<string, string> path_to_gpios;
+                    unsigned int nr_of_pins ;
+                    string* gpios_enabled_list = 0;
+                    char path_to_gpio[PATH_TAB_LEN];
+                    const char* gpios_settings[SETTINGS_GPIO_TAB_LEN] = {"direction", "value"};
                     enum{SETTINGS_DIRECTION, SETTINGS_VALUE };
                     
                 public:
                     void initPin();
-                    GpioPins(const char* gpioStr);
+                    template<typename... T>
+                        GpioPins(const T&... pins){
+                            nr_of_pins = sizeof...(pins);
+                            gpios_enabled_list = new string[nr_of_pins];
+                            int i = 0;
+                            for(string n: {pins...}){
+                                cout<<n<<endl;
+                                gpios_enabled_list[i++] = n;
+                                cout<<gpios_enabled_list[i-1]<<endl;
+                            }
+
+                            
+                        };
                     
 
 

@@ -25,8 +25,14 @@ fstream
 -
 iostream
 -
-cstring
+string
 -
 
 /home/odroid/workspace/c_cpp/sefl_driving_robot/motor_control/odroid_pins.hpp
+map
+-
+iostream
+-
+array
+-
 
