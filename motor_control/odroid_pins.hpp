@@ -47,7 +47,7 @@ class GpioPins:
                 private:
                     // Mapping odroid M1 GPIOyx.z to connected number
                     // TODO: mayb change to enum
-                    map<string, int> gpio_to_int = {{"gpio0B3", 11 }, {"gpio0B4", 12 }, {"gpio0B5", 13 }, {"gpio0B6", 14 },
+                    map<string, int> gpio_name_to_nr = {{"gpio0B3", 11 }, {"gpio0B4", 12 }, {"gpio0B5", 13 }, {"gpio0B6", 14 },
                                                     {"gpio3B2", 106}, {"gpio3B5", 109}, {"gpio3B6", 110}, {"gpio4B6", 142},
                                                     {"gpio0C0", 16 }, {"gpio0C1", 17 }, {"gpio3C6", 118}, {"gpio3C7", 119},
                                                     {"gpio4C1", 145},
@@ -69,12 +69,12 @@ class GpioPins:
                             nr_of_pins = sizeof...(pins);
                             gpios_enabled_list = new string[nr_of_pins];
                             int i = 0;
+                            string gpiochip = "gpiochip";
                             for(string n: {pins...}){
-                                cout<<n<<endl;
-                                gpios_enabled_list[i++] = n;
-                                cout<<gpios_enabled_list[i-1]<<endl;
+                                gpios_enabled_list[i++] = n; // save used pins in list
+                                path_to_gpios[n] = PATH_TO_GPIO + gpiochip + to_string(gpio_name_to_nr[n]);// convert added pins to path
+                                cout << path_to_gpios[n] << endl;
                             }
-
                             
                         };
                     
