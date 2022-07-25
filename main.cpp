@@ -3,28 +3,28 @@
 #include <iostream>
 #include <fstream>
 
-#include <opencv2/opencv.hpp>
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
+// #include <opencv2/opencv.hpp>
+// #include <opencv2/core/core.hpp>
+// #include <opencv2/highgui/highgui.hpp>
 
 #include "motor_control/odroid_pins.hpp"
 
 using namespace std;
-using namespace cv;
+//using namespace cv;
 
 void write_to_file(const char* path, int value){
     ofstream my_file(path);
     my_file << value << endl;
 }
-void test_openCV(){
-    string image_path = samples::findFile("HappyFish.jpg");
-    Mat img = imread(image_path, IMREAD_COLOR);
-    if(img.empty()){
-        cout << "could not read the image"<< image_path<< endl;
-    }
-    imshow("display window", img);
-    int k = waitKey(0);
-}
+// void test_openCV(){
+//     string image_path = samples::findFile("HappyFish.jpg");
+//     Mat img = imread(image_path, IMREAD_COLOR);
+//     if(img.empty()){
+//         cout << "could not read the image"<< image_path<< endl;
+//     }
+//     imshow("display window", img);
+//     int k = waitKey(0);
+// }
 
 int main(int argv, char* args[]){
 
@@ -34,7 +34,8 @@ int main(int argv, char* args[]){
     pwm1->initPin();
     cout << "test programu, periond " << endl;
     
-    GpioPins* a   = new GpioPins("gpio0B3", "dwa", "trzy");
+    GpioPins* gpios  = new GpioPins("gpio3D0", "gpio3C6", "gpio3C7", "gpio3D1");
+    gpios->initPin();
 
     return 0;
 }

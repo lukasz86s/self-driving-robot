@@ -49,23 +49,17 @@ PwmPins::PwmPins(){
 
 PwmPins::PwmPins(const char* pwmchip ){
     sprintf(path_to_pwmchip,"%s%s%c",PATH_TO_PWM, pwmchip, '/');
-    cout<< path_to_pwmchip << endl;
-
 }
 
 void GpioPins::initPin(){
-    char path[PATH_TAB_LEN];
-    sprintf(path, "%s%s", PATH_TO_GPIO, "export");
+    const string export_ = "export";
+    string temp_path = PATH_TO_GPIO + export_;
+    cout << temp_path<< endl;
+    for(const auto& [key, value]: gpios_enabled_list){
+        writePinFile(temp_path.c_str(), value);    //enable correct pin
+        cout<<value<<endl;
+    }
+
 
 }
-//TODO: create variadic variable to initialize seweral gpios
-// GpioPins::GpioPins(const T&... pins){
-//     // char **gpio_tab = new(char* , len(variadic))
-//     // for (char &tab : gpio_tab){ tab = variadic[0], tab = variadic[1]...
-//     int vars = *(&gpioStr + 1) - gpioStr;
-//     cout<< "vars :" <<vars<<endl;
-//     for(int i = 0; i < vars; i++){
-
-
-//     }
-// }
+// TODO: create init gpio pins () and hi low function. next move class with  go forward backward left right
