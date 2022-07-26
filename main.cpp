@@ -8,6 +8,8 @@
 // #include <opencv2/highgui/highgui.hpp>
 
 #include "motor_control/odroid_pins.hpp"
+#include "motor_control/engine_control.hpp"
+#include <unistd.h>
 
 using namespace std;
 //using namespace cv;
@@ -28,14 +30,11 @@ void write_to_file(const char* path, int value){
 
 int main(int argv, char* args[]){
 
-    PwmPins* pwm0 = new PwmPins(); 
-    PwmPins* pwm1 = new PwmPins("pwmchip1");
-    pwm0->initPin();
-    pwm1->initPin();
-    cout << "test programu, periond " << endl;
-    
-    GpioPins* gpios  = new GpioPins("gpio3D0", "gpio3C6", "gpio3C7", "gpio3D1");
-    gpios->initPin();
+
+    EngineControl* engines = new EngineControl("gpio3C7", "gpio3D1", "gpio3C6", "gpio3D0", "pwmchip1");
+    engines->move_forward_test();
+    sleep(5);
+    engines->move_stop();
 
     return 0;
 }

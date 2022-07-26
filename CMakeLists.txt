@@ -8,7 +8,7 @@ enable_testing()
 #find_package(OpenCV REQUIRED COMPONENTS core videoio imgproc highgui imgcodecs)
 #include_directories(${OpenCV_INCLUDE_DIRS})
 
-add_executable(self_driving_robot main.cpp motor_control/odroid_pins.cpp)
+add_executable(self_driving_robot main.cpp motor_control/odroid_pins.cpp motor_control/engine_control.cpp) 
 #target_link_libraries(self_driving_robot ${OpenCV_LIBS})
 set_property(TARGET self_driving_robot PROPERTY CXX_STANDARD 20)
 

@@ -38,7 +38,7 @@ class PwmPins:
                     void initPin();
                     PwmPins();
                     PwmPins(const char* pwmchip );
-                    
+                //TODO: create function set power 
                     
             };
 
@@ -77,6 +77,10 @@ class GpioPins:
                             }
                             
                         };
+                        // TODO: move to cpp create macro for path 
+                    void writeOutPin(const string pin_name){ string gpio = "gpio"; string path = PATH_TO_GPIO + gpio + to_string(gpio_name_to_nr[pin_name]) + "/direction"; writePinFile(path.c_str(), "out");cout << path <<endl;}
+                    void writePinHi(const string pin_name){ string gpio = "gpio"; string path = PATH_TO_GPIO + gpio + to_string(gpio_name_to_nr[pin_name]) + "/value"; writePinFile(path.c_str(), 1U);}
+                    void writePinLow(const string pin_name){ string gpio = "gpio"; string path = PATH_TO_GPIO + gpio + to_string(gpio_name_to_nr[pin_name]) + "/value"; writePinFile(path.c_str(), 0U);}
                     
 
 

@@ -14,7 +14,7 @@ void Pins::writePinFile(const char* path, unsigned int value){
         pin_file << value << endl;
         return;    
     }
-    cout<< "cannot read file"<< endl;
+    cout<< "cannot read file"<< path << endl;
     
 }
 
@@ -24,7 +24,7 @@ void Pins::writePinFile(const char* path, const char* str_cmd){
         pin_file << str_cmd << endl;
         return;
     }
-     cout<< "cannot read file"<< endl;
+     cout<< "cannot read file"<< path << endl;
 
 }
 
@@ -54,7 +54,7 @@ PwmPins::PwmPins(const char* pwmchip ){
 void GpioPins::initPin(){
     const string export_ = "export";
     string temp_path = PATH_TO_GPIO + export_;
-    cout << temp_path<< endl;
+    cout << "gpio init "<< temp_path<< endl;
     for(const auto& [key, value]: gpios_enabled_list){
         writePinFile(temp_path.c_str(), value);    //enable correct pin
         cout<<value<<endl;
