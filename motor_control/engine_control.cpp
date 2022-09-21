@@ -5,7 +5,7 @@ EngineControl::EngineControl(const string right_a, const string right_b, const s
     direction_pins = new GpioPins(right_a, right_b, left_a, left_b);
     power_pins->initPin();
     direction_pins->initPin();
-
+    //maping move cotrols pins, must be after init pins
     engine_control_pins["right_a"] = right_a;
     engine_control_pins["right_b"] = right_b;
     engine_control_pins["left_a"] = left_a;
@@ -16,11 +16,22 @@ EngineControl::EngineControl(const string right_a, const string right_b, const s
     }
  
 }
-void EngineControl::move_forward_test(){
+void EngineControl::moveForward(){
     direction_pins->writePinHi(engine_control_pins["right_a"]);
     direction_pins->writePinHi(engine_control_pins["left_a"]);
 }
-void EngineControl::move_stop(){
+
+void EngineControl::moveRight(){
+    moveStop();
+    direction_pins->writePinHi(engine_control_pins["left_a"]);
+}
+
+void EngineControl::moveLeft(){
+    moveStop();
+    direction_pins->writePinHi(engine_control_pins["right_a"]);
+}
+
+void EngineControl::moveStop(){
     for(const auto& [key, values]: engine_control_pins){
         direction_pins->writePinLow(values);
     }

@@ -9,9 +9,9 @@ using namespace std;
 
 //TODO: capture error from ofstream 
 void Pins::writePinFile(const char* path, unsigned int value){
-    ofstream pin_file(path);
-    if(pin_file.good()){
-        pin_file << value << endl;
+    ofstream pinFile(path);
+    if(pinFile.good()){
+        pinFile << value << endl;
         return;    
     }
     cout<< "cannot read file"<< path << endl;
@@ -19,9 +19,9 @@ void Pins::writePinFile(const char* path, unsigned int value){
 }
 
 void Pins::writePinFile(const char* path, const char* str_cmd){
-    ofstream pin_file(path);
-    if(pin_file.good()){
-        pin_file << str_cmd << endl;
+    ofstream pinFile(path);
+    if(pinFile.good()){
+        pinFile << str_cmd << endl;
         return;
     }
      cout<< "cannot read file"<< path << endl;
@@ -53,10 +53,10 @@ PwmPins::PwmPins(const char* pwmchip ){
 
 void GpioPins::initPin(){
     const string export_ = "export";
-    string temp_path = PATH_TO_GPIO + export_;
-    cout << "gpio init "<< temp_path<< endl;
+    string tempPath = PATH_TO_GPIO + export_;
+    cout << "gpio init "<< tempPath<< endl;
     for(const auto& [key, value]: gpios_enabled_list){
-        writePinFile(temp_path.c_str(), value);    //enable correct pin
+        writePinFile(tempPath.c_str(), value);    //enable correct pin
         cout<<value<<endl;
     }
 

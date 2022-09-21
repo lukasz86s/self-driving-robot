@@ -13,8 +13,12 @@ class EngineControl{
         map<string, string> engine_control_pins;
     public:
         EngineControl(const string right_a, const string right_b, const string left_a, const string left_b, const string pwmchip);
-        void move_forward_test();
-        void move_stop();
+        void moveStop();
+        void moveForward();
+        void moveRight();
+        void moveLeft();
+        void setPower();
+        
 
 };
 #endif

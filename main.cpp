@@ -32,9 +32,9 @@ int main(int argv, char* args[]){
 
 
     EngineControl* engines = new EngineControl("gpio3C7", "gpio3D1", "gpio3C6", "gpio3D0", "pwmchip1");
-    engines->move_forward_test();
+    engines->moveForward();
     sleep(5);
-    engines->move_stop();
+    engines->moveStop();
 
     return 0;
 }
