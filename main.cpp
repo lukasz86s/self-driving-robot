@@ -30,11 +30,12 @@ void write_to_file(const char* path, int value){
 
 int main(int argv, char* args[]){
 
-
+    printf("start");
     EngineControl* engines = new EngineControl("gpio3C7", "gpio3D1", "gpio3C6", "gpio3D0", "pwmchip1");
     engines->moveForward();
     sleep(5);
     engines->moveStop();
+    delete engines;
 
     return 0;
 }

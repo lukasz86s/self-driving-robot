@@ -12,9 +12,11 @@ void Pins::writePinFile(const char* path, unsigned int value){
     ofstream pinFile(path);
     if(pinFile.good()){
         pinFile << value << endl;
+        pinFile.close();
         return;    
     }
     cout<< "cannot read file"<< path << endl;
+    pinFile.close();
     
 }
 
@@ -22,9 +24,11 @@ void Pins::writePinFile(const char* path, const char* str_cmd){
     ofstream pinFile(path);
     if(pinFile.good()){
         pinFile << str_cmd << endl;
+        pinFile.close();
         return;
     }
      cout<< "cannot read file"<< path << endl;
+     pinFile.close();
 
 }
 
@@ -37,8 +41,7 @@ void PwmPins::initPin(){
     for(int i = 0; i < SETTINGS_PWM_TAB_LEN; i++){
             sprintf(path, "%s%s%s", path_to_pwmchip, "pwm0/", initial_settings[i]);
             writePinFile(path, initial_settings_values[i]);
-            cout<< path << endl;
-            
+            cout<< path << endl;     
     }
         
 }
